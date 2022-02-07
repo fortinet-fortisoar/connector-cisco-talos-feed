@@ -6,13 +6,13 @@
       "name": "Sample - Cisco Talos Feed - 1.0.0",
       "description": "Sample playbooks for \"Cisco Talos Feed\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
-      "image": "/api/3/images/02c859a1-bac9-4c0f-b3f1-566f3efb1a50",
+      "image": "/api/3/images/8f2e3053-9854-40db-b10a-c7f56add76d1",
       "uuid": "630a3a5f-0ef0-4399-8770-a4e01ee382fd",
-      "id": 132,
+      "id": 25,
       "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-      "createDate": 1643970841.787854,
+      "createDate": 1644233386.289806,
       "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-      "modifyDate": 1643970841.787854,
+      "modifyDate": 1644233386.289806,
       "recordTags": [],
       "deletedAt": null,
       "workflows": [
@@ -31,7 +31,7 @@
             "ingestedData"
           ],
           "synchronous": false,
-          "lastModifyDate": 1643975476,
+          "lastModifyDate": 1644238590,
           "collection": "/api/3/workflow_collections/630a3a5f-0ef0-4399-8770-a4e01ee382fd",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/a438dfff-88c2-44d9-87e1-e885c738c83f",
@@ -48,8 +48,7 @@
               "top": "220",
               "left": "400",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-              "uuid": "05a2123f-e22e-48f5-a752-2afe4a133cae",
-              "id": 2519
+              "uuid": "05a2123f-e22e-48f5-a752-2afe4a133cae"
             },
             {
               "@type": "WorkflowStep",
@@ -62,8 +61,7 @@
               "top": "140",
               "left": "980",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-              "uuid": "12a3dfe4-088a-4e8a-971c-78058e5b6c48",
-              "id": 2520
+              "uuid": "12a3dfe4-088a-4e8a-971c-78058e5b6c48"
             },
             {
               "@type": "WorkflowStep",
@@ -97,8 +95,7 @@
               "top": "480",
               "left": "980",
               "stepType": "/api/3/workflow_step_types/7b221880-716b-4726-a2ca-5e568d330b3e",
-              "uuid": "80d6824b-7831-461f-a471-11864394f1bb",
-              "id": 2521
+              "uuid": "80d6824b-7831-461f-a471-11864394f1bb"
             },
             {
               "@type": "WorkflowStep",
@@ -124,8 +121,7 @@
               "top": "320",
               "left": "560",
               "stepType": "/api/3/workflow_step_types/12254cf5-5db7-4b1a-8cb1-3af081924b28",
-              "uuid": "8e12450a-4d76-4965-bf09-54cf902d5262",
-              "id": 2522
+              "uuid": "8e12450a-4d76-4965-bf09-54cf902d5262"
             },
             {
               "@type": "WorkflowStep",
@@ -143,8 +139,7 @@
               "top": "40",
               "left": "40",
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
-              "uuid": "a438dfff-88c2-44d9-87e1-e885c738c83f",
-              "id": 2523
+              "uuid": "a438dfff-88c2-44d9-87e1-e885c738c83f"
             },
             {
               "@type": "WorkflowStep",
@@ -152,7 +147,7 @@
               "description": null,
               "arguments": {
                 "tlp": "White",
-                "expiry": "1",
+                "expiry": "7",
                 "tlp_map": "{'Red': {{'TrafficLightProtocol'| picklist('Red') }}, 'Amber': {{'TrafficLightProtocol'| picklist('Amber') }}, 'Green': {{'TrafficLightProtocol'| picklist('Green') }}, 'White': {{'TrafficLightProtocol'| picklist('White') }}}",
                 "confidence": "50",
                 "reputation": "Suspicious",
@@ -162,8 +157,7 @@
               "top": "120",
               "left": "240",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-              "uuid": "baf49716-0aa5-49d5-80ea-02e3bb3b0fe8",
-              "id": 2524
+              "uuid": "baf49716-0aa5-49d5-80ea-02e3bb3b0fe8"
             }
           ],
           "routes": [
@@ -219,13 +213,14 @@
             "dataingestion",
             "create",
             "fetch",
-            "cisco-talos-feed"
+            "cisco-talos-feed",
+            "Cisco"
           ],
-          "id": 536,
+          "id": "113",
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1643970841.790287,
+          "createDate": 1644233386.290679,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1643975476.150712,
+          "modifyDate": 1644238590.036946,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null
@@ -238,12 +233,12 @@
           "tag": null,
           "description": "Fetch list of blacklist IP indicators feed from the Cisco Talos Threat intelligence.",
           "isActive": false,
-          "debug": true,
+          "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1643970198,
+          "lastModifyDate": 1644238627,
           "collection": "/api/3/workflow_collections/630a3a5f-0ef0-4399-8770-a4e01ee382fd",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/4a9c5e46-6bdf-485a-a385-a0ae804f2b34",
@@ -273,8 +268,7 @@
               "top": "40",
               "left": "40",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "4a9c5e46-6bdf-485a-a385-a0ae804f2b34",
-              "id": 2525
+              "uuid": "4a9c5e46-6bdf-485a-a385-a0ae804f2b34"
             },
             {
               "@type": "WorkflowStep",
@@ -297,8 +291,7 @@
               "top": "140",
               "left": "220",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "f8c2495e-b437-400c-8ea3-21f97b8605c8",
-              "id": 2526
+              "uuid": "f8c2495e-b437-400c-8ea3-21f97b8605c8"
             }
           ],
           "routes": [
@@ -318,11 +311,11 @@
             "cisco-talos-feed",
             "Cisco"
           ],
-          "id": 537,
+          "id": "114",
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1643970841.793319,
+          "createDate": 1644233386.291083,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1643976119.100581,
+          "modifyDate": 1644238627.111213,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null
@@ -340,7 +333,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1643970259,
+          "lastModifyDate": 1644238615,
           "collection": "/api/3/workflow_collections/630a3a5f-0ef0-4399-8770-a4e01ee382fd",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/4ba19b5b-747b-4df6-929e-7e84dadc471f",
@@ -360,8 +353,7 @@
               "top": "40",
               "left": "120",
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
-              "uuid": "4ba19b5b-747b-4df6-929e-7e84dadc471f",
-              "id": 2527
+              "uuid": "4ba19b5b-747b-4df6-929e-7e84dadc471f"
             },
             {
               "@type": "WorkflowStep",
@@ -385,8 +377,7 @@
               "top": "180",
               "left": "120",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "9f02aaa7-7c4b-4369-b0c8-67d638077c23",
-              "id": 2528
+              "uuid": "9f02aaa7-7c4b-4369-b0c8-67d638077c23"
             }
           ],
           "routes": [
@@ -405,13 +396,14 @@
           "recordTags": [
             "dataingestion",
             "ingest",
-            "cisco-talos-feed"
+            "cisco-talos-feed",
+            "Cisco"
           ],
-          "id": 538,
+          "id": "115",
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1643970841.794214,
-          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1643970841.794214,
+          "createDate": 1644233386.291316,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1644238615.315384,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null

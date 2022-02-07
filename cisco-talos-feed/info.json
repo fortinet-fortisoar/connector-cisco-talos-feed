@@ -1,7 +1,7 @@
 {
   "name": "cisco-talos-feed",
   "label": "Cisco Talos Feed",
-  "description": "Talos Reputation Center provides access to expansive threat data and related information. This connector facilitates automated operations related to pull list of blacklist IP Addresses.",
+  "description": "Talos Reputation Center provides access to expansive threat data and related information. This connector facilitates automated operations related to fetching the list of blacklisted IP addresses.",
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
@@ -19,7 +19,8 @@
   ],
    "ingestion_preferences": {
     "modules": [
-      "threat_intel_feeds"
+      "threat_intel_feeds",
+      "indicators"
     ]
   },
   "configuration": {
@@ -28,7 +29,7 @@
         "title": "Server URL",
         "name": "server_url",
         "type": "text",
-        "description": "Server URL of the Talos Feed Security server to which you will connect and perform the automated operations.",
+        "description": "Server URL of the Cisco Talos Feed Security server to which you will connect and perform the automated operations.",
         "required": true,
         "editable": true,
         "visible": true,
@@ -64,12 +65,11 @@
           "type": "select",
           "options": [
             "Create as Feed Records in FortiSOAR",
-            "Save to File",
             "Return as a JSON"
           ],
           "value": "Return as a JSON",
-          "tooltip": "Select the method of returning the Feed Data information. You can choose between the data being create as Feed records in FortiSOAR or returned in the JSON format (Return as a JSON) or being written to a file on the FortiSOAR server (Save to File). If you choose the 'Create as Feed Records in FortiSOAR' option, then in Record Creation Playbook IRI field, specify the IRI of the Create Record playbooks IRI, else if if you choose 'Save to File' option, then in the Filename field, specify the name of the file in which you want to save the feed information retrieved from Anomali Limo.",
-          "description": "Select the method of returning the Feed Data information. You can choose between the data being create as Feed records in FortiSOAR or returned in the JSON format (Return as a JSON) or being written to a file on the FortiSOAR server (Save to File). If you choose the 'Create as Feed Records in FortiSOAR' option, then in Record Creation Playbook IRI field, specify the IRI of the Create Record playbooks IRI, else if if you choose 'Save to File' option, then in the Filename field, specify the name of the file in which you want to save the feed information retrieved from Anomali Limo.",
+          "tooltip": "Select the method of returning the Feed Data information. You can choose between the data being create as Feed records in FortiSOAR or returned in the JSON format (Return as a JSON).",
+          "description": "Select the method of returning the Feed Data information. You can choose between the data being create as Feed records in FortiSOAR or returned in the JSON format (Return as a JSON).",
           "onchange": {
             "Create as Feed Records in FortiSOAR": [
               {
@@ -82,19 +82,7 @@
                 "visible": true
               }
             ],
-            "Return as a JSON": [],
-            "Save to File": [
-              {
-                "title": "Filename",
-                "name": "filename",
-                "type": "text",
-                "visible": true,
-                "editable": true,
-                "required": true,
-                "placeholder": "Eg. feeds.json",
-                "tooltip": "The file will be created under /tmp"
-              }
-            ]
+            "Return as a JSON": []
           }
         }
       ],
