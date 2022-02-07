@@ -1,0 +1,96 @@
+{
+  "name": "cisco-talos-feed",
+  "label": "Cisco Talos Feed",
+  "description": "Talos Reputation Center provides access to expansive threat data and related information. This connector facilitates automated operations related to fetching the list of blacklisted IP addresses.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Threat Intelligence",
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "ingestion_supported": true,
+  "tags": [
+    "threatintel-inbound"
+  ],
+  "ingestion_modes": [
+    "scheduled"
+  ],
+   "ingestion_preferences": {
+    "modules": [
+      "threat_intel_feeds",
+      "indicators"
+    ]
+  },
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "type": "text",
+        "description": "Server URL of the Cisco Talos Feed Security server to which you will connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "placeholder": "https://talosintelligence.com",
+        "value": "https://talosintelligence.com"
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "fetch_indicators",
+      "title": "Fetch Indicators",
+      "category": "investigation",
+      "annotation": "fetch_indicators",
+      "description": "Fetch list of blacklist IP indicators feed from the Cisco Talos Threat intelligence.",
+      "parameters": [
+        {
+          "title": "Process Response As",
+          "name": "output_mode",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Create as Feed Records in FortiSOAR",
+            "Return as a JSON"
+          ],
+          "value": "Return as a JSON",
+          "tooltip": "Select the method of returning the Feed Data information. You can choose between the data being create as Feed records in FortiSOAR or returned in the JSON format (Return as a JSON).",
+          "description": "Select the method of returning the Feed Data information. You can choose between the data being create as Feed records in FortiSOAR or returned in the JSON format (Return as a JSON).",
+          "onchange": {
+            "Create as Feed Records in FortiSOAR": [
+              {
+                "title": "Record Creation Playbook IRI",
+                "description": "",
+                "type": "text",
+                "name": "create_pb_id",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Return as a JSON": []
+          }
+        }
+      ],
+      "enabled": true,
+      "output_schema": []
+    }
+  ]
+}
+
+
+
