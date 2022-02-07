@@ -2,8 +2,8 @@
   "name": "cisco-talos-feed",
   "label": "Cisco Talos Feed",
   "description": "Talos Reputation Center provides access to expansive threat data and related information. This connector facilitates automated operations related to pull list of blacklist IP Addresses.",
-  "publisher": "Community",
-  "cs_approved": false,
+  "publisher": "Fortinet",
+  "cs_approved": true,
   "cs_compatible": true,
   "version": "1.0.0",
   "category": "Threat Intelligence",
@@ -103,5 +103,6 @@
     }
   ]
 }
+
 
 
