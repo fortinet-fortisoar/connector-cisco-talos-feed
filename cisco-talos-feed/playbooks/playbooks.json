@@ -2,15 +2,17 @@
   "type": "workflow_collections",
   "data": [
     {
-      "@context": "/api/3/contexts/WorkflowCollection",
       "@type": "WorkflowCollection",
       "name": "Sample - Cisco Talos Feed - 1.0.0",
       "description": "Sample playbooks for \"Cisco Talos Feed\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
-      "image": "/api/3/images/1c2a417e-8d5f-4a99-8809-5842d2d82abf",
-      "id": 16,
-      "createDate": 1644247517.853493,
-      "modifyDate": 1644247517.853493,
+      "image": "/api/3/images/9cc574dd-1dbf-486a-a83a-620334b299ee",
+      "uuid": "d0d8beae-5e65-4ec0-a8b2-7c6f548ccd9b",
+      "id": 64,
+      "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "createDate": 1646908207.789972,
+      "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "modifyDate": 1646908207.789972,
       "recordTags": [],
       "deletedAt": null,
       "workflows": [
@@ -29,8 +31,8 @@
             "ingestedData"
           ],
           "synchronous": false,
-          "lastModifyDate": 1644315261,
-          "collection": "/api/3/workflow_collections/630a3a5f-0ef0-4399-8770-a4e01ee382fd",
+          "lastModifyDate": 1646921641,
+          "collection": "/api/3/workflow_collections/d0d8beae-5e65-4ec0-a8b2-7c6f548ccd9b",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/09ccf8de-b300-41b2-990f-1d37e412b0f7",
           "steps": [
@@ -128,16 +130,16 @@
                   "tLP": "{% if vars.tlp %}{{ vars.tlp | resolveRange(vars.tlp_map)}}{% endif %}",
                   "value": "{{vars.item }}",
                   "source": "Cisco Talos Threat Intel",
-                  "__replace": "",
+                  "__replace": "false",
                   "expiresOn": "{{ arrow.get().int_timestamp + (vars.expiry | int)*24*60*60 }}",
-                  "confidence": "{% if vars.confidence %}{{ vars.confidence }}{% else %}{{ vars.item.labels[2].split(\"-\")[-1] }}{% endif %}",
-                  "reputation": "{% if vars.reputation %}{{ vars.reputation | resolveRange(vars.reputation_map)}}{% else %}{{ vars.item.labels[1].split(\"-\")[-1] | resolveRange(vars.reputation_map) }}{% endif %}",
+                  "confidence": "{% if vars.confidence %}{{ vars.confidence }}{% endif %}",
+                  "reputation": "{% if vars.reputation %}{{ vars.reputation | resolveRange(vars.reputation_map)}}{% endif %}",
                   "sourceData": "{{vars.item}}",
                   "typeOfFeed": "/api/3/picklists/b788efc2-dadb-4448-9018-043b37266de4"
                 },
                 "_showJson": false,
                 "operation": "Overwrite",
-                "collection": "/api/3/threat_intel_feeds",
+                "collection": "/api/3/upsert/threat_intel_feeds",
                 "__recommend": [],
                 "fieldOperation": {
                   "recordTags": "Overwrite"
@@ -221,11 +223,11 @@
             "cisco-talos-feed",
             "Cisco"
           ],
-          "id": "88",
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1644315274.48142,
+          "id": "727",
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1646908207.791546,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1644315274.48142,
+          "modifyDate": 1646921640.939243,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null
@@ -244,7 +246,7 @@
           "parameters": [],
           "synchronous": false,
           "lastModifyDate": 1644315261,
-          "collection": "/api/3/workflow_collections/630a3a5f-0ef0-4399-8770-a4e01ee382fd",
+          "collection": "/api/3/workflow_collections/d0d8beae-5e65-4ec0-a8b2-7c6f548ccd9b",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/65841ad7-39e8-431a-8fa0-a3a560034a0f",
           "steps": [
@@ -309,11 +311,11 @@
             "cisco-talos-feed",
             "Cisco"
           ],
-          "id": "87",
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1644315274.463305,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1644315274.463305,
+          "id": "728",
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1646908207.792194,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1646908207.792194,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null
@@ -332,7 +334,7 @@
           "parameters": [],
           "synchronous": false,
           "lastModifyDate": 1644315292,
-          "collection": "/api/3/workflow_collections/630a3a5f-0ef0-4399-8770-a4e01ee382fd",
+          "collection": "/api/3/workflow_collections/d0d8beae-5e65-4ec0-a8b2-7c6f548ccd9b",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/4a9c5e46-6bdf-485a-a385-a0ae804f2b34",
           "steps": [
@@ -404,11 +406,11 @@
             "cisco-talos-feed",
             "Cisco"
           ],
-          "id": "63",
+          "id": "729",
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1644247517.854801,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1644315291.660213,
+          "createDate": 1646908207.792503,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1646908207.792503,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null
