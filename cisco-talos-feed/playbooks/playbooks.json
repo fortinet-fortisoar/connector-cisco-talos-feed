@@ -4,17 +4,18 @@
     {
       "@type": "WorkflowCollection",
       "name": "Sample - Cisco Talos Feed - 1.0.0",
-      "description": "Sample playbooks for \"Cisco Talos Feed\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
-      "image": "/api/3/images/9cc574dd-1dbf-486a-a83a-620334b299ee",
+      "description": "Cisco Talos Reputation Center provides access to expansive threat data and related information. This connector facilitates automated operations related to fetching the list of blacklisted IP addresses and ingestion of daily threat feeds. This connector has a dependency on the <a href=\"/content-hub/all-content/?contentType=solutionpack&amp;tag=ThreatIntelManagement\" target=\"_blank\" rel=\"noopener\">Threat Intel Management Solution Pack</a>. Install the Solution Pack before enabling ingestion of Threat Feeds from this source.",
+      "image": "/api/3/images/59931f34-d3e3-4a2f-839e-ef5747119ef2",
       "uuid": "d0d8beae-5e65-4ec0-a8b2-7c6f548ccd9b",
-      "id": 64,
+      "id": 67,
       "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-      "createDate": 1646908207.789972,
+      "createDate": 1648710805.595283,
       "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-      "modifyDate": 1646908207.789972,
-      "recordTags": [],
+      "modifyDate": 1648710805.595283,
       "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [],
       "workflows": [
         {
           "@type": "Workflow",
@@ -22,7 +23,7 @@
           "name": "> Cisco Talos Feed > Fetch and Create",
           "aliasName": null,
           "tag": null,
-          "description": "Fetch list of blacklist IP indicators feed from the Cisco Talos Threat intelligence.",
+          "description": "Fetch Blacklist IP Addresses from Cisco Talos Feed and create Indicators Records.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -31,7 +32,7 @@
             "ingestedData"
           ],
           "synchronous": false,
-          "lastModifyDate": 1646921641,
+          "lastModifyDate": 1648711204,
           "collection": "/api/3/workflow_collections/d0d8beae-5e65-4ec0-a8b2-7c6f548ccd9b",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/09ccf8de-b300-41b2-990f-1d37e412b0f7",
@@ -90,8 +91,8 @@
                   {
                     "option": "No, For Ingestion",
                     "default": true,
-                    "step_iri": "/api/3/workflow_steps/8c1d66f3-a2b7-4e92-b303-b4db93f0ae00",
-                    "step_name": "Create Record"
+                    "step_iri": "/api/3/workflow_steps/b8e4d592-b713-4698-ab85-03bc2ba41231",
+                    "step_name": "Create Record123"
                   }
                 ]
               },
@@ -109,48 +110,10 @@
                 "data": "[\n    \"89.163.237.45\",\n    \"51.15.235.211\",\n    \"81.30.158.81\",\n    \"189.84.21.44\",\n    \"109.188.125.19\",\n    \"94.230.208.147\",\n    \"5.157.38.34\",\n    \"94.230.208.148\",\n    \"59.93.18.32\",\n    \"59.95.69.44\",\n    \"199.249.230.108\",\n    \"91.229.77.64\",\n    \"117.213.45.110\",\n    \"213.39.51.93\",\n    \"5.196.58.96\",\n    \"59.97.169.64\",\n    \"212.47.238.193\",\n    \"204.194.29.4\",\n    \"212.47.248.81\",\n    \"118.163.74.160\",\n    \"128.31.0.13\",\n    \"185.234.216.59\",\n    \"72.34.42.146\",\n    \"82.163.79.61\",\n    \"199.249.230.77\",\n    \"91.228.151.52\",\n    \"104.128.161.233\",\n    \"199.87.154.251\",\n    \"82.221.129.96\",\n    \"190.235.204.82\",\n    \"176.58.100.98\",\n    \"146.0.77.50\",\n    \"185.220.102.6\",\n    \"178.17.174.10\",\n    \"59.95.72.195\",\n    \"84.38.185.103\",\n    \"46.166.190.192\",\n    \"199.249.230.120\",\n    \"185.36.100.145\",\n    \"176.10.107.180\",\n    \"185.100.85.61\",\n    \"59.96.29.133\",\n    \"192.81.223.177\",\n    \"216.251.83.79\",\n    \"221.8.69.25\",\n    \"109.70.100.26\",\n    \"185.107.70.202\",\n    \"162.244.25.249\",\n    \"198.61.227.6\",\n    \"210.89.63.39\",\n    \"23.129.64.217\",\n    \"209.66.119.150\",\n    \"117.201.204.15\",\n    \"117.198.170.69\",\n    \"178.175.28.176\",\n    \"37.48.109.107\",\n    \"59.96.26.233\",\n    \"109.188.127.28\",\n    \"185.135.156.94\",\n    \"46.166.188.208\",\n    \"92.63.197.38\",\n    \"185.220.101.33\",\n    \"199.249.230.89\",\n    \"199.249.230.70\",\n    \"5.56.133.19\",\n    \"212.21.66.6\",\n    \"175.107.4.97\",\n    \"199.249.230.80\",\n    \"185.100.86.154\",\n    \"217.12.201.109\",\n    \"59.97.170.22\",\n    \"185.220.101.36\",\n    \"92.222.71.173\",\n    \"162.247.74.217\",\n    \"117.195.83.252\",\n    \"194.187.251.155\",\n    \"174.127.99.132\",\n    \"87.118.116.12\",\n    \"85.90.244.52\",\n    \"64.137.178.3\",\n    \"178.72.70.110\",\n    \"185.165.168.77\",\n    \"178.151.182.123\",\n    \"178.95.96.162\",\n    \"117.196.17.4\",\n    \"146.0.77.15\",\n    \"103.234.36.148\",\n    \"59.99.129.45\",\n    \"185.220.101.69\",\n    \"178.17.170.23\",\n    \"178.175.56.74\",\n    \"185.100.87.129\",\n    \"195.254.135.76\",\n    \"96.43.141.186\",\n    \"166.62.28.107\",\n    \"89.234.157.254\",\n    \"178.175.118.198\",\n    \"185.220.101.4\"\n  ]"
               },
               "status": null,
-              "top": "140",
-              "left": "980",
+              "top": "160",
+              "left": "960",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
               "uuid": "796c7a3a-4856-48ea-bc40-16ae6188a075"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Create Record",
-              "description": null,
-              "arguments": {
-                "for_each": {
-                  "item": "{{vars.input.params.ingestedData}}",
-                  "__bulk": true,
-                  "parallel": false,
-                  "condition": "",
-                  "batch_size": 100
-                },
-                "resource": {
-                  "tLP": "{% if vars.tlp %}{{ vars.tlp | resolveRange(vars.tlp_map)}}{% endif %}",
-                  "value": "{{vars.item }}",
-                  "source": "Cisco Talos Threat Intel",
-                  "__replace": "false",
-                  "expiresOn": "{{ arrow.get().int_timestamp + (vars.expiry | int)*24*60*60 }}",
-                  "confidence": "{% if vars.confidence %}{{ vars.confidence }}{% endif %}",
-                  "reputation": "{% if vars.reputation %}{{ vars.reputation | resolveRange(vars.reputation_map)}}{% endif %}",
-                  "sourceData": "{{vars.item}}",
-                  "typeOfFeed": "/api/3/picklists/b788efc2-dadb-4448-9018-043b37266de4"
-                },
-                "_showJson": false,
-                "operation": "Overwrite",
-                "collection": "/api/3/upsert/threat_intel_feeds",
-                "__recommend": [],
-                "fieldOperation": {
-                  "recordTags": "Overwrite"
-                },
-                "step_variables": []
-              },
-              "status": null,
-              "top": "460",
-              "left": "1000",
-              "stepType": "/api/3/workflow_step_types/2597053c-e718-44b4-8394-4d40fe26d357",
-              "uuid": "8c1d66f3-a2b7-4e92-b303-b4db93f0ae00"
             },
             {
               "@type": "WorkflowStep",
@@ -165,6 +128,40 @@
               "left": "400",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
               "uuid": "cf5fc020-f997-4e80-a570-e4f20bc94ef4"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Record",
+              "description": null,
+              "arguments": {
+                "for_each": {
+                  "item": "{{vars.input.params.ingestedData}}",
+                  "__bulk": true,
+                  "parallel": false,
+                  "condition": "",
+                  "batch_size": null
+                },
+                "resource": {
+                  "tLP": "{% if vars.tlp %}{{ vars.tlp | resolveRange(vars.tlp_map)}}{% endif %}",
+                  "value": "{{vars.item }}",
+                  "source": "Cisco Talos Threat Intel",
+                  "__replace": "",
+                  "expiresOn": "{{ arrow.get().int_timestamp + (vars.expiry | int)*24*60*60 }}",
+                  "confidence": "{% if vars.confidence %}{{ vars.confidence }}{% endif %}",
+                  "reputation": "{% if vars.reputation %}{{ vars.reputation | resolveRange(vars.reputation_map)}}{% endif %}",
+                  "sourceData": "{{vars.item | toJSON}}",
+                  "typeOfFeed": "/api/3/picklists/b788efc2-dadb-4448-9018-043b37266de4"
+                },
+                "_showJson": false,
+                "collection": "/api/ingest-feeds/threat_intel_feeds",
+                "__recommend": [],
+                "step_variables": []
+              },
+              "status": null,
+              "top": "440",
+              "left": "960",
+              "stepType": "/api/3/workflow_step_types/7b221880-716b-4726-a2ca-5e568d330b3e",
+              "uuid": "b8e4d592-b713-4698-ab85-03bc2ba41231"
             }
           ],
           "routes": [
@@ -206,31 +203,32 @@
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Is data only for mapping -> Create Record1",
-              "targetStep": "/api/3/workflow_steps/8c1d66f3-a2b7-4e92-b303-b4db93f0ae00",
+              "name": "Is data only for mapping -> Create Record123",
+              "targetStep": "/api/3/workflow_steps/b8e4d592-b713-4698-ab85-03bc2ba41231",
               "sourceStep": "/api/3/workflow_steps/7937bd7d-e5f2-44f9-82fc-c685986d45b0",
               "label": "No, For Ingestion",
               "isExecuted": false,
-              "uuid": "1d422a8a-d26b-41a2-9096-96206ec57f35"
+              "uuid": "69430e41-4223-42c9-928c-7be1ff16b0a8"
             }
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "5b591418-ee85-4492-87f2-b1ce1a347851",
+          "id": "577",
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1648710805.596975,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1648711205.242676,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "dataingestion",
             "create",
             "fetch",
             "cisco-talos-feed",
             "Cisco"
-          ],
-          "id": "727",
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1646908207.791546,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1646921640.939243,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null
+          ]
         },
         {
           "@type": "Workflow",
@@ -238,14 +236,14 @@
           "name": "Cisco Talos Feed > Ingest",
           "aliasName": null,
           "tag": null,
-          "description": "Fetch list of blacklist IP indicators feed from the Cisco Talos Threat intelligence.",
+          "description": "Fetch list of blacklist IP indicators from the Cisco Talos Threat Intelligence.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1644315261,
+          "lastModifyDate": 1648703573,
           "collection": "/api/3/workflow_collections/d0d8beae-5e65-4ec0-a8b2-7c6f548ccd9b",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/65841ad7-39e8-431a-8fa0-a3a560034a0f",
@@ -305,20 +303,21 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "a86bb2cd-960f-4e64-b825-7135007f30d1",
+          "id": "578",
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1648710805.597915,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1648710805.597915,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "dataingestion",
             "ingest",
             "cisco-talos-feed",
             "Cisco"
-          ],
-          "id": "728",
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1646908207.792194,
-          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1646908207.792194,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null
+          ]
         },
         {
           "@type": "Workflow",
@@ -326,14 +325,14 @@
           "name": "Fetch Indicators",
           "aliasName": null,
           "tag": null,
-          "description": "Fetch list of blacklist IP indicators feed from the Cisco Talos Threat intelligence.",
+          "description": "Retrieves list of blacklist IP indicators feed from the Cisco Talos Threat intelligence.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1644315292,
+          "lastModifyDate": 1648703672,
           "collection": "/api/3/workflow_collections/d0d8beae-5e65-4ec0-a8b2-7c6f548ccd9b",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/4a9c5e46-6bdf-485a-a385-a0ae804f2b34",
@@ -402,18 +401,19 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "cee0e0ad-9fe1-43a1-8b9b-7eca84495aa9",
+          "id": "579",
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1648710805.598364,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1648710805.598364,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "cisco-talos-feed",
             "Cisco"
-          ],
-          "id": "729",
-          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1646908207.792503,
-          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1646908207.792503,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null
+          ]
         }
       ]
     }
